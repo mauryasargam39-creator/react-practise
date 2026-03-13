@@ -5,7 +5,9 @@ const App = () => {
 
   const [title, setTitle] = useState('')
   const [details, setDetails] = useState('')
+
   const [task, setTask] = useState([])
+
   const submitHandler = (e) => {
     e.preventDefault();
 
@@ -20,7 +22,7 @@ const App = () => {
     setDetails('');
   };
 
-
+  //  delete notex 
   const deletNotes = (idx) => {
     const copyTask = [...task];
     copyTask.splice(idx,1)
@@ -71,9 +73,6 @@ const App = () => {
       <div className="lg:w-1/2 border-l-2 bg-gray-900 p-10 ">
         <h1 className="text-4xl font-bold text-white">Recent Notes</h1>
         <div className="flex gap-5 items-start justify-start flex-wrap mt-5 overflow-auto h-full">
-          {/* <div className="h-52 w-40 rounded-2xl bg-white"></div>
-          <div className="h-52 w-40 rounded-2xl bg-white"></div> */}
-
 
            {task.map(function(elem,idx){
             return <div key={idx} className="flex justify-between flex-col items-start relative h-52 w-40 bg-cover rounded-2xl pt-9 pb-4 px-4 text-black bg-[url('https://static.vecteezy.com/system/resources/previews/037/152/677/non_2x/sticky-note-paper-background-free-png.png')]">
